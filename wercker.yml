@@ -1,0 +1,13 @@
+box: wercker/default
+build:
+  steps:
+    - script:
+        name: 'sample step'
+        code: |
+          if [ -n "$SAMPLE_FAILURE" ]; then exit 1; fi
+
+  after-steps:
+    - script:
+        name: 'flare'
+        code: |
+          curl http://rhea.peer60.net:8888/flare -X POST -d "wercker.result=$WERCKER_RESULT"
