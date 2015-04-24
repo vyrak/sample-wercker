@@ -10,4 +10,4 @@ build:
     - script:
         name: 'flare'
         code: |
-          curl http://rhea.peer60.net:8888/flare -X POST -d "wercker.result=$WERCKER_RESULT"
+          curl http://rhea.peer60.net:8888/flare -X POST -d "result=$WERCKER_RESULT"
